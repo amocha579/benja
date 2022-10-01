@@ -12,6 +12,9 @@ const home = require('../app/controllers/home');
 
 module.exports = function(app) {
   app.get('/', home.index);
+  app.get("/testing", function(req, res) {
+    res.render('home/testing.pug', { title: 'testing' });
+  });
 
   /**
    * Error handling
