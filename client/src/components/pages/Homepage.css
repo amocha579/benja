@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Open+Sans:wght@300;600&display=swap');
+
+
+.homepage {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    
+}
+
+.Homepage-title {
+    color: var(--brown);
+    display: flex;
+    justify-content: center;
+    font-family: 'Livvic', cursive;
+}
+
+html {
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Homepage-image {
+    background-color: transparent;
+    background-size: contain;
+    height:100px;
+    width:150px;
+    display: flex;
+    justify-content: center;
+}
+
+.Homepage-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.Homepage-text-container {
+    margin: 30px 90px 10px 90px;
+    font-size: 15px;
+    font-family: 'Livvic', sans-serif;
+    color: black;
+}
+
+p {
+    text-align: center;
+}
+
+
+.Homepage-GO-button {
+    background-color: var(--green);
+    border-radius: 50px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Homepage-GO-container {
+    position: relative;
+    width: 100%;
+    left: 50vw;
+    margin: 20px 0px 50px -135px;
+}
+
+.Homepage-GO-title {
+    font-size: 25px;
+    font-family: 'Livvic', sans-serif;
+    color: var(--brown);
+}
+
+.Homepage-GO-title:hover {
+    opacity: 60%;
+}

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Open+Sans:wght@300;600&display=swap');
+
+.NavBar-container {
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  padding: var(--s) var(--m);
+  margin-right: 0;
+  background-color: var(--green);
+  font-size: 20px;
+}
+
+.NavBar-title {
+  padding: 10px; 
+}
+
+.NavBar-title:hover {
+  /* background-color: rgb(225, 228, 204); */
+  opacity: 60%;
+  border-radius: var(--l);
+}
+
+.NavBar-title-link {
+  color: var(--brown);
+  font-family: 'Livvic', sans-serif;
+  text-decoration: none;
+}
+
+
+.NavBar-links {
+  margin-left: var(--l);
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Livvic', sans-serif;
+}
+
+.NavBar-about {
+  padding: 10px; 
+  margin: 10px;
+}
+
+.NavBar-about:hover {
+  /* background-color: rgb(225, 228, 204); */
+  opacity: 60%;
+  border-radius: var(--l);
+}
+
+.NavBar-link,
+.NavBar-link:visited {
+  color: var(--brown);
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* .toggle-button {
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+height: 3px;
+width: 100%;
+background-color: var(--brown);
+border-radius: 10px;
+} */
+
+
+
+/* @media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .NavBar-links {
+    display: none;
+  }
+
+  .NavBar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* .NavBar-link,
+  .NavBar-link:visited {
+    width: 100%;
+    flex-direction: column;
+  } */
+
+  /* .NavBar-links li {
+    text-align: right;
+  }
+
+  .NavBar-links li a {
+    padding: .5rem 1rem;
+  } 
+
+  .NavBar-links.active {
+    display: flex;
+  }
+
+  
+}
+
+.menu-show {
+  display:block;
+}
+
+.menu-hide {
+  display:none;
+}
+
+.Navbar-Hamb {
+  width: 130px;
+  background-color: white;
+  border: 1px solid var(--brown);
+}
+
+.Navbar-menu-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 10px 0;
+} */
