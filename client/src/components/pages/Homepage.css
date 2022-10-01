@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Open+Sans:wght@300;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 
 .homepage {
     width: 100%;
@@ -15,7 +14,7 @@ body {
     color: var(--brown);
     display: flex;
     justify-content: center;
-    font-family: 'Livvic', cursive;
+    font-family: 'Unica One', cursive;
 }
 
 html {
@@ -43,7 +42,7 @@ html {
 .Homepage-text-container {
     margin: 30px 90px 10px 90px;
     font-size: 15px;
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Unica One', sans-serif;
     color: black;
 }
 
@@ -72,7 +71,7 @@ p {
 
 .Homepage-GO-title {
     font-size: 25px;
-    font-family: 'Livvic', sans-serif;
+    font-family: 'Unica One', sans-serif;
     color: var(--brown);
 }
 
