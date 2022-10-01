@@ -16,6 +16,11 @@ module.exports = function(app) {
     res.render('home/testing.pug', { title: 'testing' });
   });
 
+  app.get("/test_api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+  });
+
+
   /**
    * Error handling
    */

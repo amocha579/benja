@@ -8,10 +8,17 @@ class Homepage extends Component {
       super(props);
       // Initialize Default State
       this.state = {};
+      this.data = null;
     }
   
     componentDidMount() {
       // remember -- api calls go here!
+      fetch("/test_api")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("HERE: ",data);
+          this.data = data.message
+        });
     }
   
     go = () => {
