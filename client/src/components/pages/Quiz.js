@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Question from "../modules/Question.js";
+
 import "./Homepage.css";
 
 class Quiz extends Component {
@@ -25,20 +27,37 @@ class Quiz extends Component {
 
     render() {
         if (!this.state.questions) {
-            return  <h1 className="Homepage-title">Loading Quiz...</h1>
+          return  <h1 className="Homepage-title">Loading Quiz...</h1>
         }
         else{
-        return (
-          <div className="homepage">
-            <div className="Homepage-image-container">
-              <div className="Homepage-image"/>
+          let questionList = [];
+
+          for (const [key, val] of Object.entries(this.state.questions)) {
+            //console.log([key, val]);
+            questionList.push(
+            <Question 
+              title={val["question"]}
+              answers={val["answers"]}
+            />);
+          }
+          /*questionList = this.state.questions.map((q) => (
+            <Question
+              title={q.question}
+              answers={q.answers}
+            />
+          ));*/
+
+          return (
+            <div className="homepage">
+              <div className="Homepage-image-container">
+                <div className="Homepage-image"/>
+              </div>
+              <h1 className="Homepage-title">Opposites Quiz</h1>
+              <div >
+                {questionList}
+              </div>
             </div>
-            <h1 className="Homepage-title">Opposites Quiz</h1>
-            <div >
-              <p className="Homepage-text-container">Some text</p>
-            </div>
-          </div>
-        );
+          );
         }
     }
   }
