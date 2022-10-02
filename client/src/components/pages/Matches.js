@@ -11,6 +11,7 @@ class Matches extends Component {
   }
 
   componentDidMount() {
+    /*
     // remember -- api calls go here!
     fetch('/get_matches')
       .then(res => res.json())
@@ -18,6 +19,7 @@ class Matches extends Component {
         this.setState({ matches: data })
         console.log('Matches: ', this.state.matches)
       })
+      */
   }
 
   go = () => {
@@ -26,7 +28,10 @@ class Matches extends Component {
 
   render() {
     if (!this.state.matches) {
-      return <h1 className="Homepage-title">Loading Matches...</h1>
+      return (<>
+      <h1 className="Homepage-title">~TBD Feature~</h1>
+      <p>Matches will show up here after you take the quiz!</p>
+      </>)
     } else {
       // let questionList = []
 

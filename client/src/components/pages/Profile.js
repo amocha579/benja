@@ -31,6 +31,9 @@ class Profile extends Component {
   }
 
   render() {
+    return (
+      <h1 className="Homepage-title">~Feature TBD~</h1>
+    )
     if (!this.state.name) {
       return <h1 className="Homepage-title">Loading Profile...</h1>
     } else {
