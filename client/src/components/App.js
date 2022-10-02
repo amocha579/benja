@@ -56,6 +56,16 @@ class App extends Component {
     // });
   }
 
+  localStorageLogin = (name, email) => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+  }
+
+  localStorageLogout = () => {
+    localStorage.removeItem("name", null);
+    localStorage.removeItem("email", null);
+  }
+
   handleLogin = res => {
     console.log(`Logged in as ${res.profileObj.email}`)
     //const userToken = res.tokenObj.id_token
@@ -63,6 +73,7 @@ class App extends Component {
       userEmail: res.profileObj.email,
       userName: res.profileObj.name,
     })
+    this.localStorageLogin(this.state.userEmail, this.state.userName);
   }
 
   handleButtonLogin = () => {
@@ -73,15 +84,19 @@ class App extends Component {
         userEmail: profile.getEmail(),
         userName: profile.getName(),
       })
-      console.log(e.getBasicProfile().getEmail())
+      this.localStorageLogin(this.state.userEmail, this.state.userName);
+      navigate("/quiz");
     })
   }
+
+  getUser = () => this.state.userName || localStorage.getItem("name");
 
   handleLogout = () => {
     this.setState({
       userEmail: null,
       userName: null,
     })
+    this.localStorageLogout();
     navigate('/')
   }
 
@@ -98,7 +113,7 @@ class App extends Component {
           <NavBar
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
-            userName={this.state.userName}
+            userName={this.getUser()}
           />
           <Router>
             <Homepage path="/" userId={this.state.userId} />
@@ -111,19 +126,19 @@ class App extends Component {
         <NavBar
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
-          userName={this.state.userName}
+          userName={this.getUser()}
         />
         <Router>
           <Homepage
             path="/"
-            userId={this.state.userId}
+            userId={this.getUser()}
             locationNumber={this.state.locationNumber}
             updateLocationNumber={this.updateLocationNumber}
             handleButtonLogin={this.handleButtonLogin}
           />
-          <Quiz path="/quiz" userId={this.state.userName} />
-          <Matches path="/matches" userId={this.state.userName} />
-          <Profile path="/profile" userId={this.state.userName} />
+          <Quiz path="/quiz" userId={this.getUser()} />
+          <Matches path="/matches" userId={this.getUser()} />
+          <Profile path="/profile" userId={this.getUser()} />
         </Router>
       </>
     )
