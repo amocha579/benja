@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import NavBar from "./modules/NavBar.js";
-import { Router } from "@reach/router";
+import React, { Component } from 'react'
+import NavBar from './modules/NavBar.js'
+import { Router } from '@reach/router'
 //import NotFound from "./pages/NotFound.js";
-import Homepage from "./pages/Homepage.js";
+import Homepage from './pages/Homepage.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
-import { navigate } from "@reach/router";
+import { navigate } from '@reach/router'
 
 //import "../utilities.css";
 
-import { socket } from "../client-socket.js";
+import { socket } from '../client-socket.js'
 
-import { get, post } from "../utilities";
+import { get, post } from '../utilities'
 //import TagYourself from "./pages/TagYourself.js";
 
 /**
@@ -20,21 +20,21 @@ import { get, post } from "../utilities";
 class App extends Component {
   // makes props available in this component
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       userId: undefined,
-    };
+    }
   }
 
   componentDidMount() {
-    get("/api/whoami").then((user) => {
+    get('/api/whoami').then(user => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
-        this.setState({ 
+        this.setState({
           userId: user._id,
-        });
+        })
       }
-    });
+    })
   }
 
   getMatched = () => {
@@ -48,26 +48,25 @@ class App extends Component {
     // this.setState({
     //   locationNumber: newNumber,
     // });
-  };
+  }
 
-  handleLogin = (res) => {
-    console.log(`Logged in as ${res.profileObj.name}`);
-    const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user) => {
-      this.setState(
-        { 
-          userId: user._id,
-      });
-      post("/api/initsocket", { socketid: socket.id });
-    });
-
-  };
+  handleLogin = res => {
+    console.log(`Logged in as ${res.profileObj.name}`)
+    const userToken = res.tokenObj.id_token
+    post('/api/login', { token: userToken }).then(user => {
+      this.setState({
+        userId: user._id,
+      })
+      post('/api/initsocket', { socketid: socket.id })
+    })
+  }
 
   handleLogout = () => {
-    this.setState({ userId: undefined });
-    post("/api/logout").then(() => {navigate("/")});
-    
-  };
+    this.setState({ userId: undefined })
+    post('/api/logout').then(() => {
+      navigate('/')
+    })
+  }
 
   /*updateList = (newList) => {
     this.setState({
@@ -77,20 +76,18 @@ class App extends Component {
 
   render() {
     if (this.state.loading) {
-      return(<div>
-        <NavBar
-          handleLogin={this.handleLogin}
-          handleLogout={this.handleLogout}
-          userId={this.state.userId}
-        />
-        <Router>
-          <Homepage
-            path="/"
+      return (
+        <div>
+          <NavBar
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
             userId={this.state.userId}
           />
-          
-        </Router>
-      </div>);
+          <Router>
+            <Homepage path="/" userId={this.state.userId} />
+          </Router>
+        </div>
+      )
     }
     return (
       <>
@@ -108,7 +105,7 @@ class App extends Component {
           />
         </Router>
       </>
-    );
+    )
   }
 }
 
@@ -145,7 +142,7 @@ class App extends Component {
           <NotFound default />
           */
 
-export default App;
+export default App
 
 /*import logo from './logo.svg';
 import './App.css';

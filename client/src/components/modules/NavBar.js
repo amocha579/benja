@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 //import { Link } from "@reach/router";
-import GoogleLogin, { GoogleLogout } from "react-google-login";
+import GoogleLogin, { GoogleLogout } from 'react-google-login'
 //import { get, post } from "../../utilities";
 
-
-import "./NavBar.css";
+import './NavBar.css'
 //import TagYourself from "../pages/TagYourself";
 //import EditTags from "./EditTags";
 
 // This identifies your application to Google's authentication service
-const GOOGLE_CLIENT_ID = "533608654360-2g29s7nt6r8om5rtbhdil1f3ub9d27qn.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID =
+  '533608654360-2g29s7nt6r8om5rtbhdil1f3ub9d27qn.apps.googleusercontent.com'
 
 // const toggleButton = document.getElementsByClassName("toggle-button")[0];
 // const navbarLinks = document.getElementsByClassName("NavBar-links")[0];
@@ -23,30 +23,28 @@ const GOOGLE_CLIENT_ID = "533608654360-2g29s7nt6r8om5rtbhdil1f3ub9d27qn.apps.goo
  */
 
 class NavBar extends Component {
-
   constructor(props) {
-    super(props);
-    this.state = {
-    };
+    super(props)
+    this.state = {}
   }
-
 
   render() {
     return (
       <nav className="NavBar-container">
-        <div className = "NavBar-title">
-          <a className = "NavBar-title-link" href="/"> touch-and-GO!</a>
+        <div className="NavBar-title">
+          <a className="NavBar-title-link" href="/">
+            {' '}
+            Opposites Attract
+          </a>
         </div>
-        
+
         <div className="NavBar-links">
-          
-          
           {this.props.userId ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
               buttonText="Logout"
               onLogoutSuccess={this.props.handleLogout}
-              onFailure={(err) => console.log(err)}
+              onFailure={err => console.log(err)}
               className="NavBar-link NavBar-login"
             />
           ) : (
@@ -54,7 +52,7 @@ class NavBar extends Component {
               clientId={GOOGLE_CLIENT_ID}
               buttonText="Login"
               onSuccess={this.props.handleLogin}
-              onFailure={(err) => console.log(err)}
+              onFailure={err => console.log(err)}
               className="NavBar-link NavBar-login"
             />
           )}
@@ -82,8 +80,7 @@ class NavBar extends Component {
           <div className="ignore">link two</div>
         </div>
       </div> */
-      
-      /*<div className="toggle-button" onClick={()=> this.setShowMenu()}>
+        /*<div className="toggle-button" onClick={()=> this.setShowMenu()}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
@@ -95,11 +92,9 @@ class NavBar extends Component {
           </div>
         </div>
          */}
-
       </nav>
-      
-    );
+    )
   }
 }
 
-export default NavBar;
+export default NavBar

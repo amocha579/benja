@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Open+Sans:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Livvic&family=Open+Sans:wght@300;600&display=swap'); */
 
 .NavBar-container {
   display: flex;
@@ -7,11 +9,11 @@
   padding: var(--s) var(--m);
   margin-right: 0;
   background-color: var(--green);
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .NavBar-title {
-  padding: 10px; 
+  padding: 10px;
 }
 
 .NavBar-title:hover {
@@ -22,22 +24,22 @@
 
 .NavBar-title-link {
   color: var(--brown);
-  font-family: 'Livvic', sans-serif;
+  font-family: 'Unica One', sans-serif;
   text-decoration: none;
 }
 
-
 .NavBar-links {
   margin-left: var(--l);
+  margin-right: var(--l);
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-family: 'Livvic', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .NavBar-about {
-  padding: 10px; 
+  padding: 10px;
   margin: 10px;
 }
 
@@ -72,8 +74,6 @@ background-color: var(--brown);
 border-radius: 10px;
 } */
 
-
-
 /* @media (max-width: 600px) {
   .toggle-button {
     display: flex;
@@ -94,7 +94,7 @@ border-radius: 10px;
     flex-direction: column;
   } */
 
-  /* .NavBar-links li {
+/* .NavBar-links li {
     text-align: right;
   }
 

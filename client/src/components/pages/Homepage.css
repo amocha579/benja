@@ -1,80 +1,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .homepage {
-    width: 100%;
+  width: 100%;
 }
 
-body {
-    width: 100%;
-    margin: 0;
-    
+.body {
+  width: 100%;
+  margin: 0;
 }
 
 .Homepage-title {
-    color: var(--brown);
-    display: flex;
-    justify-content: center;
-    font-family: 'Unica One', cursive;
+  display: flex;
+  justify-content: center;
+  font-size: 88px;
+  font-family: 'Unica One', cursive;
 }
 
-html {
-    width: 100%;
-    background-color: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.html {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Homepage-image {
-    background-color: transparent;
-    background-size: contain;
-    height:100px;
-    width:150px;
-    display: flex;
-    justify-content: center;
+  background-color: transparent;
+  background-size: contain;
+  height: 100px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  background: url(https://ibb.co/ZY3xVhs) center top no-repeat;
 }
 
 .Homepage-image-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Homepage-text-container {
-    margin: 30px 90px 10px 90px;
-    font-size: 15px;
-    font-family: 'Unica One', sans-serif;
-    color: black;
+  margin: 4px 80px 4px 80px;
+  font-size: 32px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
-
 .Homepage-GO-button {
-    background-color: var(--green);
-    border-radius: 50px;
-    width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 10px;
-    cursor: pointer;
+  /* margin: 20px 400px 100px 100px; */
+  margin: auto;
+  width: 50%;
+  background-color: rgb(0, 119, 255);
+  border-radius: 50px;
+  /* width: 250px; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Homepage-GO-button:hover {
+  opacity: 60%;
+  background-color: rgb(255, 45, 171);
 }
 
 .Homepage-GO-container {
-    position: relative;
-    width: 100%;
-    left: 50vw;
-    margin: 20px 0px 50px -135px;
+  position: relative;
+  justify-content: center;
+  width: 60%;
+  left: 20vw;
+  display: block;
+  /* margin: 20px 20px 20px 20px; */
+  /* margin: 20px 0px 50px -135px; */
 }
 
 .Homepage-GO-title {
-    font-size: 25px;
-    font-family: 'Unica One', sans-serif;
-    color: var(--brown);
+  font-size: 44px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .Homepage-GO-title:hover {
-    opacity: 60%;
+  opacity: 80%;
 }
