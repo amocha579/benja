@@ -34,6 +34,11 @@
   background: url(https://ibb.co/ZY3xVhs) center top no-repeat;
 }
 
+img {
+  width: 18%;
+  height: auto;
+}
+
 .Homepage-image-container {
   display: flex;
   justify-content: center;

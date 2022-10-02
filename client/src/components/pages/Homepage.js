@@ -32,9 +32,6 @@ class Homepage extends Component {
       return (
         <div className="homepage">
           <div className="Homepage-image-container">
-            {/* <div className="Homepage-image" /> */}
-            {/* <img src={require('../../logo.png')} /> */}
-            {/* <img src={logo} alt="ice cream" /> */}
             <img src={'https://ibb.co/ZY3xVhs'} />
           </div>
           <h1 className="Homepage-title">Do Opposites Attract?</h1>
@@ -63,11 +60,11 @@ class Homepage extends Component {
       return (
         <div className="homepage">
           <div className="Homepage-image-container">
-            <div className="Homepage-image" />
+            <img src={logo} alt="ice cream" />
           </div>
           <h1 className="Homepage-title">Do Opposites Attract?</h1>
           <p className="Homepage-text-container">
-            Find your next "least compatible" BFF!
+            Find your "least compatible" BFF!
             <br />
             <br />
           </p>
