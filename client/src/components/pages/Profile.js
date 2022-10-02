@@ -3,12 +3,11 @@ import Question from '../modules/Question.js'
 
 import './Homepage.css'
 
-class Quiz extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props)
     // Initialize Default State
     this.state = {}
-    this.name = null
   }
 
   componentDidMount() {
@@ -17,7 +16,7 @@ class Quiz extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({ name: data })
-        console.log('Name: ', this.name)
+        console.log('Name: ', this.state.name)
       })
     // fetch('/get_questions')
     //   .then(res => res.json())
@@ -32,7 +31,7 @@ class Quiz extends Component {
   }
 
   render() {
-    if (!this.state.questions) {
+    if (!this.state.name) {
       return <h1 className="Homepage-title">Loading Profile...</h1>
     } else {
       // let questionList = []
@@ -52,7 +51,7 @@ class Quiz extends Component {
 
       return (
         <div className="homepage">
-          <h1 className="Homepage-title">Welcome, {this.name}!</h1>
+          <h1 className="Homepage-title">Welcome, {this.state.name}!</h1>
           {/* <div>{questionList}</div> */}
         </div>
       )
@@ -60,4 +59,4 @@ class Quiz extends Component {
   }
 }
 
-export default Quiz
+export default Profile
