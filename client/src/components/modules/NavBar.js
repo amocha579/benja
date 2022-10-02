@@ -52,6 +52,12 @@ class NavBar extends Component {
           </a>
         </div>
         <div className="NavBar-title">
+          <a className="NavBar-title-link" href="/matches">
+            {' '}
+            Matches
+          </a>
+        </div>
+        <div className="NavBar-title">
           <a className="NavBar-title-link" href="/profile">
             {' '}
             Profile
@@ -59,7 +65,7 @@ class NavBar extends Component {
         </div>
 
         <div className="NavBar-links">
-          {this.props.userId ? (
+          {this.props.userName ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
               buttonText="Logout"

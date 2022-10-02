@@ -4,10 +4,12 @@ import { Router } from '@reach/router'
 //import NotFound from "./pages/NotFound.js";
 import Homepage from './pages/Homepage.js'
 import Quiz from './pages/Quiz.js'
+import Matches from './pages/Matches.js'
 import Profile from './pages/Profile.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
+import { gapi } from 'gapi-script'
 
 //import "../utilities.css";
 
@@ -54,22 +56,52 @@ class App extends Component {
     // });
   }
 
-  handleLogin = res => {
-    console.log(`Logged in as ${res.profileObj.name}`)
-    const userToken = res.tokenObj.id_token
-    post('/api/login', { token: userToken }).then(user => {
-      this.setState({
-        userId: user._id,
-      })
-      post('/api/initsocket', { socketid: socket.id })
-    })
+  localStorageLogin = (name, email) => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
   }
 
-  handleLogout = () => {
-    this.setState({ userId: undefined })
-    post('/api/logout').then(() => {
-      navigate('/')
+  localStorageLogout = () => {
+    localStorage.removeItem("name", null);
+    localStorage.removeItem("email", null);
+  }
+
+  handleLogin = res => {
+    console.log(`Logged in as ${res.profileObj.email}`)
+    //const userToken = res.tokenObj.id_token
+    this.setState({
+      userEmail: res.profileObj.email,
+      userName: res.profileObj.name,
     })
+    this.localStorageLogin(this.state.userEmail, this.state.userName);
+  }
+
+  handleButtonLogin = () => {
+    if (!this.getUser()){
+      const GoogleAuth = gapi.auth2.getAuthInstance()
+      GoogleAuth.signIn().then(e => {
+        const profile = e.getBasicProfile()
+        this.setState({
+          userEmail: profile.getEmail(),
+          userName: profile.getName(),
+        })
+        this.localStorageLogin(this.state.userEmail, this.state.userName);
+      })
+    }
+    else{
+      window.location.href += "quiz";
+    }
+  }
+
+  getUser = () => this.state.userName || localStorage.getItem("name");
+
+  handleLogout = () => {
+    this.setState({
+      userEmail: null,
+      userName: null,
+    })
+    this.localStorageLogout();
+    window.location.href = "/";
   }
 
   /*updateList = (newList) => {
@@ -85,7 +117,7 @@ class App extends Component {
           <NavBar
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
-            userId={this.state.userId}
+            userName={this.getUser()}
           />
           <Router>
             <Homepage path="/" userId={this.state.userId} />
@@ -98,17 +130,19 @@ class App extends Component {
         <NavBar
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
-          userId={this.state.userId}
+          userName={this.getUser()}
         />
         <Router>
           <Homepage
             path="/"
-            userId={this.state.userId}
+            userId={this.getUser()}
             locationNumber={this.state.locationNumber}
             updateLocationNumber={this.updateLocationNumber}
+            handleButtonLogin={this.handleButtonLogin}
           />
-          <Quiz path="/quiz" />
-          <Profile path="/profile" />
+          <Quiz path="/quiz" userId={this.getUser()} />
+          <Matches path="/matches" userId={this.getUser()} />
+          <Profile path="/profile" userId={this.getUser()} />
         </Router>
       </>
     )

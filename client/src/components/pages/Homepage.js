@@ -24,11 +24,10 @@ class Homepage extends Component {
   }
 
   go = () => {
-    this.props.getMatched()
   }
 
   render() {
-    if (this.props.userId) {
+    if (this.props.userName) {
       return (
         <div className="homepage">
           <div className="Homepage-image-container">
@@ -37,14 +36,7 @@ class Homepage extends Component {
           <h1 className="Homepage-main-title">Do Opposites Attract?</h1>
           <div>
             <p className="Homepage-text-container">
-              The world is becoming increasingly divided, but hey! they say
-              opposites attract.
-              <br />
-              Come put that to the test with our new machine-learning (ML) and
-              natural language processing (NLP) algorithm that will match you to
-              your “least compatible” person.
-              <br />
-              Who knows? They may be your next BFF!
+              Find your "least compatible" BFF!
               <br />
               <br />
             </p>
@@ -68,7 +60,7 @@ class Homepage extends Component {
             <br />
             <br />
           </p>
-          <div className="Homepage-button-container" onClick={() => this.go()}>
+          <div className="Homepage-button-container" onClick={() => this.props.handleButtonLogin()}>
             <div className="Homepage-button">
               <span className="Homepage-button-title">Get Matched</span>
             </div>

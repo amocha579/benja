@@ -3,7 +3,7 @@ import Question from '../modules/Question.js'
 
 import './Homepage.css'
 
-class Profile extends Component {
+class Matches extends Component {
   constructor(props) {
     super(props)
     // Initialize Default State
@@ -12,18 +12,12 @@ class Profile extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-    fetch('/user')
+    fetch('/get_matches')
       .then(res => res.json())
       .then(data => {
-        this.setState({ name: data })
-        console.log('Name: ', this.state.name)
+        this.setState({ matches: data })
+        console.log('Matches: ', this.state.matches)
       })
-    // fetch('/get_questions')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     this.setState({ questions: data })
-    //     console.log('Questions: ', this.state)
-    //   })
   }
 
   go = () => {
@@ -31,8 +25,8 @@ class Profile extends Component {
   }
 
   render() {
-    if (!this.state.name) {
-      return <h1 className="Homepage-title">Loading Profile...</h1>
+    if (!this.state.matches) {
+      return <h1 className="Homepage-title">Loading Matches...</h1>
     } else {
       // let questionList = []
 
@@ -51,13 +45,16 @@ class Profile extends Component {
 
       return (
         <div className="homepage">
-          <h1 className="Homepage-title">Welcome, {this.props.userName}!</h1>
-          {console.log(this.props.userName)}
-          {/* <div>{questionList}</div> */}
+          <h1 className="Homepage-title">Matches</h1>
+          {this.state.matches ? (
+            <div>{this.state.matches}</div>
+          ) : (
+            <div>No matches :( You are too compatible with everyone :)</div>
+          )}
         </div>
       )
     }
   }
 }
 
-export default Profile
+export default Matches
