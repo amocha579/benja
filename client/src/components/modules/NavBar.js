@@ -7,9 +7,14 @@ import './NavBar.css'
 //import TagYourself from "../pages/TagYourself";
 //import EditTags from "./EditTags";
 
+import {gapi} from "gapi-script"
+
+//import { get, post } from "../../utilities";
+
 // This identifies your application to Google's authentication service
-const GOOGLE_CLIENT_ID =
-  '533608654360-2g29s7nt6r8om5rtbhdil1f3ub9d27qn.apps.googleusercontent.com'
+const GOOGLE_CLIENT_ID = "188648922433-9me6dk1gfkdj5h54fpegs38tk1kga5ob.apps.googleusercontent.com";
+
+gapi.load("client:auth2", () => { gapi.client.init({ clientId: GOOGLE_CLIENT_ID, plugin_name: "chat", }); });
 
 // const toggleButton = document.getElementsByClassName("toggle-button")[0];
 // const navbarLinks = document.getElementsByClassName("NavBar-links")[0];
@@ -57,6 +62,7 @@ class NavBar extends Component {
             <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}
               buttonText="Login"
+              prompt='consent'
               onSuccess={this.props.handleLogin}
               onFailure={err => console.log(err)}
               className="NavBar-link NavBar-login"
