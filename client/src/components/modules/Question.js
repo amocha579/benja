@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import "./Question.css";
 
+const listOfAnswers = [];
+
 /**
  * Story is a component that renders creator and content of a story
  *
@@ -15,10 +17,12 @@ class Question extends Component {
     this.state = {};
   }
 
+  
+
   render() {
     let answerString = [];
     for(let i = 0; i < this.props.answers.length; i++) {
-        answerString.push(<p className="Question-option u-inline">{this.props.answers[i]}</p>);
+        answerString.push(<span onClick={() => this.handleClick()}><p className="Question-option u-inline">{this.props.answers[i]}</p></span>);
     }
 
     return (

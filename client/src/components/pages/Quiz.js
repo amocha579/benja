@@ -20,10 +20,34 @@ class Quiz extends Component {
           console.log("Questions: ",this.state);
         });
     }
-  
-    go = () => {
-      this.props.getMatched();
-    }
+
+    putInfoIntoDatabase = (event) => {
+      const city_list = this.generateList();
+      get("/api/whoami").then((user) => {
+        if (user.cities !== city_list){
+          post("/api/tags_and_cities", {tags: this.state.tags, cities: city_list}).then(
+            () => this.props.listUpdate(city_list)
+          ).then(
+            () => {
+               console.log(this.state.tags);
+                this.setState({ 
+                  locationNumber: 0,
+                });
+                this.props.updateLocationNumber(0);
+                //navigate("/location/" + user.lastVisited);
+              });
+        } else {
+          this.setState({ 
+            locationNumber: user.lastVisited,
+          });
+          if (this.state.locationNumber === undefined || this.state.locationNumber === null) {
+            this.props.updateLocationNumber(0);
+          } else {
+            this.props.updateLocationNumber(user.lastVisited);
+          }
+        }
+      }
+    )}
 
     render() {
         if (!this.state.questions) {
@@ -36,6 +60,7 @@ class Quiz extends Component {
             //console.log([key, val]);
             questionList.push(
             <Question 
+              number={key}
               title={val["question"]}
               answers={val["answers"]}
             />);
