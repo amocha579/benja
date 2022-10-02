@@ -4,8 +4,8 @@ import { Router } from '@reach/router'
 //import NotFound from "./pages/NotFound.js";
 import Homepage from './pages/Homepage.js'
 import Quiz from './pages/Quiz.js'
-import Profile from './pages/Profile.js'
 import Matches from './pages/Matches.js'
+import Profile from './pages/Profile.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
@@ -121,9 +121,9 @@ class App extends Component {
             updateLocationNumber={this.updateLocationNumber}
             handleButtonLogin={this.handleButtonLogin}
           />
-          <Quiz path="/quiz" userId={this.state.userId} />
-          <Profile path="/profile" userId={this.state.userId} />
-          <Matches path="/matches" userId={this.state.userId} />
+          <Quiz path="/quiz" userId={this.state.userName} />
+          <Matches path="/matches" userId={this.state.userName} />
+          <Profile path="/profile" userId={this.state.userName} />
         </Router>
       </>
     )

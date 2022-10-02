@@ -51,7 +51,8 @@ class Profile extends Component {
 
       return (
         <div className="homepage">
-          <h1 className="Homepage-title">Welcome, {this.state.name}!</h1>
+          <h1 className="Homepage-title">Welcome, {this.props.userName}!</h1>
+          {console.log(this.props.userName)}
           {/* <div>{questionList}</div> */}
         </div>
       )

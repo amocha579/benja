@@ -52,15 +52,15 @@ class NavBar extends Component {
           </a>
         </div>
         <div className="NavBar-title">
-          <a className="NavBar-title-link" href="/profile">
-            {' '}
-            Profile
-          </a>
-        </div>
-        <div className="NavBar-title">
           <a className="NavBar-title-link" href="/matches">
             {' '}
             Matches
+          </a>
+        </div>
+        <div className="NavBar-title">
+          <a className="NavBar-title-link" href="/profile">
+            {' '}
+            Profile
           </a>
         </div>
 
