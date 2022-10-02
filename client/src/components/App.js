@@ -77,16 +77,20 @@ class App extends Component {
   }
 
   handleButtonLogin = () => {
-    const GoogleAuth = gapi.auth2.getAuthInstance()
-    GoogleAuth.signIn().then(e => {
-      const profile = e.getBasicProfile()
-      this.setState({
-        userEmail: profile.getEmail(),
-        userName: profile.getName(),
+    if (!this.getUser()){
+      const GoogleAuth = gapi.auth2.getAuthInstance()
+      GoogleAuth.signIn().then(e => {
+        const profile = e.getBasicProfile()
+        this.setState({
+          userEmail: profile.getEmail(),
+          userName: profile.getName(),
+        })
+        this.localStorageLogin(this.state.userEmail, this.state.userName);
       })
-      this.localStorageLogin(this.state.userEmail, this.state.userName);
-      navigate("/quiz");
-    })
+    }
+    else{
+      window.location.href += "quiz";
+    }
   }
 
   getUser = () => this.state.userName || localStorage.getItem("name");
@@ -97,7 +101,7 @@ class App extends Component {
       userName: null,
     })
     this.localStorageLogout();
-    navigate('/')
+    window.location.href = "/";
   }
 
   /*updateList = (newList) => {
