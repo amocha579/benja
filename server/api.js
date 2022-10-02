@@ -50,57 +50,17 @@ router.get("/user", (req, res) => {
 });
 
 router.post("/questionAnswer", (req, res) => {
+  User.deleteOne({_id: req.body.user._id});
+
   const newUser = new User({
-    //_id: "63399e7182d8f45a3871bb6b",
-    name: "omggg",
+    _id: req.body.user._id,
+    name: req.body.user.name,
+    //name: "omggg",
     listChoices: req.body.listChoices,
   })
   newUser.save().then((user) => {
     res.send(user);
   });
-});
-
-router.get("/lastVisited", (req, res) => {
-  User.find({}).then((lastVisited) => res.send(lastVisited));
-})
-
-router.post("/lastVisited", (req, res) => {
-  User.updateOne({_id: "hiiii"}, {lastVisited: req.body.lastVisited}).then((user) => {
-    res.send(user);
-  });
-});
-
-router.get("/stories", (req, res) => {
-  // empty selector means get all documents
-  Story.find({location: req.query.location}).then((stories) => res.send(stories));
-});
-
-router.post("/story", auth.ensureLoggedIn, (req, res) => {
-  const newStory = new Story({
-    creator_id: req.user._id,
-    creator_name: req.user.name,
-    content: req.body.content,
-    location: req.body.location,
-  });
-
-  newStory.save().then((story) => res.send(story));
-});
-
-router.get("/comment", (req, res) => {
-  Comment.find({ parent: req.query.parent }).then((comments) => {
-    res.send(comments);
-  });
-});
-
-router.post("/comment", auth.ensureLoggedIn, (req, res) => {
-  const newComment = new Comment({
-    creator_id: req.user._id,
-    creator_name: req.user.name,
-    parent: req.body.parent,
-    content: req.body.content,
-  });
-
-  newComment.save().then((comment) => res.send(comment));
 });
 
 // anything else falls to this "not found" case

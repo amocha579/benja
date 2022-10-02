@@ -63,9 +63,11 @@ module.exports = function(app) {
     /*User.updateOne({_id: "hiiii"}, {listChoices: req.body.answers}, {upsert: true}).then((user) => {
       res.send(user);
     });*/
+    User.deleteOne({id: req.body.user._id});
     const newUser = new User({
       //_id: "63399e7182d8f45a3871bb6b",
-      name: "omggg",
+      _id: req.body.user._id,
+      name: req.body.user.name,
       //googleid: "asdfasdf",
       listChoices: req.body.listChoices,
     })

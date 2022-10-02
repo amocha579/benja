@@ -25,13 +25,14 @@ class Quiz extends Component {
     }
 
     putInfoIntoDatabase = (event) => {
-      get("/api/whoami").then((user) => {
+      /*get("/api/whoami").then((user) => {
         if(user) {
           post("/api/questionAnswer", {user: user, answers: listOfAnswers});
         }
         
-      }
-    )}
+      }*/
+      post("/api/questionAnswer", {user: {_id: "63399f16067de7b44ccdc09d", name: "hiiii"}, answers: listOfAnswers});
+    }
 
     render() {
         if (!this.state.questions) {
