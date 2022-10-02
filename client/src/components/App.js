@@ -3,6 +3,7 @@ import NavBar from './modules/NavBar.js'
 import { Router } from '@reach/router'
 //import NotFound from "./pages/NotFound.js";
 import Homepage from './pages/Homepage.js'
+import Quiz from './pages/Quiz.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
@@ -27,14 +28,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    get('/api/whoami').then(user => {
+    /*
+    get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         this.setState({
           userId: user._id,
         })
       }
-    })
+    });
+    */
   }
 
   getMatched = () => {
@@ -103,6 +106,7 @@ class App extends Component {
             locationNumber={this.state.locationNumber}
             updateLocationNumber={this.updateLocationNumber}
           />
+          <Quiz path="/quiz" />
         </Router>
       </>
     )

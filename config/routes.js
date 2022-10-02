@@ -20,6 +20,11 @@ module.exports = function(app) {
     res.json({ message: "Hello from server!" });
   });
 
+  app.get("/get_questions", (req, res) => {
+    const questions = require('./questions.json');
+    res.json(questions);
+  });
+
 
   /**
    * Error handling

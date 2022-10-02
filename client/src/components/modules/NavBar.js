@@ -37,6 +37,12 @@ class NavBar extends Component {
             Opposites Attract
           </a>
         </div>
+        <div className="NavBar-title">
+          <a className="NavBar-title-link" href="/quiz">
+            {' '}
+            Take Quiz
+          </a>
+        </div>
 
         <div className="NavBar-links">
           {this.props.userId ? (
