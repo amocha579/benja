@@ -57,6 +57,12 @@ class NavBar extends Component {
             Profile
           </a>
         </div>
+        <div className="NavBar-title">
+          <a className="NavBar-title-link" href="/matches">
+            {' '}
+            Matches
+          </a>
+        </div>
 
         <div className="NavBar-links">
           {this.props.userName ? (

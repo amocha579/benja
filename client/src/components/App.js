@@ -5,10 +5,11 @@ import { Router } from '@reach/router'
 import Homepage from './pages/Homepage.js'
 import Quiz from './pages/Quiz.js'
 import Profile from './pages/Profile.js'
+import Matches from './pages/Matches.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
-import {gapi} from "gapi-script"
+import { gapi } from 'gapi-script'
 
 //import "../utilities.css";
 
@@ -58,31 +59,30 @@ class App extends Component {
   handleLogin = res => {
     console.log(`Logged in as ${res.profileObj.email}`)
     //const userToken = res.tokenObj.id_token
-      this.setState({
-        userEmail: res.profileObj.email,
-        userName: res.profileObj.name
-      })
+    this.setState({
+      userEmail: res.profileObj.email,
+      userName: res.profileObj.name,
+    })
   }
 
   handleButtonLogin = () => {
-    const GoogleAuth = gapi.auth2.getAuthInstance();
+    const GoogleAuth = gapi.auth2.getAuthInstance()
     GoogleAuth.signIn().then(e => {
-      const profile = e.getBasicProfile();
+      const profile = e.getBasicProfile()
       this.setState({
         userEmail: profile.getEmail(),
-        userName: profile.getName()
-    })
+        userName: profile.getName(),
+      })
       console.log(e.getBasicProfile().getEmail())
-      
-    });
+    })
   }
 
   handleLogout = () => {
     this.setState({
-        userEmail: null,
-        userName: null
+      userEmail: null,
+      userName: null,
     })
-      navigate('/')
+    navigate('/')
   }
 
   /*updateList = (newList) => {
@@ -112,7 +112,7 @@ class App extends Component {
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
           userName={this.state.userName}
-          />
+        />
         <Router>
           <Homepage
             path="/"
@@ -121,8 +121,9 @@ class App extends Component {
             updateLocationNumber={this.updateLocationNumber}
             handleButtonLogin={this.handleButtonLogin}
           />
-          <Quiz path="/quiz" />
-          <Profile path="/profile" />
+          <Quiz path="/quiz" userId={this.state.userId} />
+          <Profile path="/profile" userId={this.state.userId} />
+          <Matches path="/matches" userId={this.state.userId} />
         </Router>
       </>
     )
