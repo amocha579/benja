@@ -1,199 +1,167 @@
 {
-    "question_1": {
-       "question": "Vanilla or chocolate?",
-       "answers": [
-          "Vanilla",
-          "Chocolate"
-       ]
-    },
-    "question_2": {
-       "question": "Pineapple on pizza?",
-       "answers": [
-          "Of course! What else?",
-          "Yuck, never in a million years"
-       ]
-    },
-    "question_3": {
-       "question": "Eat or drink soup?",
-       "answers": [
-          "You EAT the chunks in the soup!",
-          "You drink it! Or else it wouldn’t be soup."
-       ]
-    },
-    "question_4": {
-       "question": "Is a hot dog a sandwich?",
-       "answers": [
-          "Yes, it has bread encasing innards",
-          "No, it literally has one piece of bread"
-       ]
-    },
-    "question_5": {
-       "question": "What music do you listen to?",
-       "answers": [
-          "Pop",
-          "Country",
-          "Rock-and-roll",
-          "Classical",
-          "What is music?"
-       ]
-    },
-    "question_6": {
-       "question": "What Hogwarts house are you?",
-       "answers": [
-          "Gryffindor",
-          "Syltherin",
-          "Ravenclaw",
-          "Hufflepuff",
-          "What is Hogwarts?"
-       ]
-    },
-    "question_7": {
-       "question": "Is it black and blue or white and gold?",
-       "answers": [
-          "Black and blue",
-          "White and gold",
-          "I don’t get the reference…"
-       ]
-    },
-    "question_8": {
-       "question": "Did the top stop spinning at the end of Inception?",
-       "answers": [
-          "Yes! It was all real",
-          "No… it’s still fake",
-          "What top? What’s Inception?"
-       ]
-    },
-    "question_9": {
-       "question": "In Titanic, could Jack have fit on the door with Rose?",
-       "answers": [
-          "Yes, Rose literally killed Jack!",
-          "No, Jack had to sacrifice himself",
-          "Who’s Jack and Rose? The Titanic?"
-       ]
-    },
-    "question_10": {
-       "question": "Did James Charles deserve to be canceled?",
-       "answers": [
-          "Yes, definitely",
-          "No, it’s unfair",
-          "James Charles, who?"
-       ]
-    },
-    "question_11": {
-       "question": "Which came first: the chicken or the egg?",
-       "answers": [
-          "The chicken had to lay the egg.",
-          "The chicken hatched from the egg.",
-          "I really want a fried egg."
-       ]
-    },
-    "question_12": {
-       "question": "Pluto deserves to be a planet.",
-       "answers": [
-          "Yes, more power to Pluto!",
-          "No, clearly not.",
-          "Wait, which one is that again?"
-       ]
-    },
-    "question_13": {
-       "question": "Do vegetables feel pain?",
-       "answers": [
-          "Yes",
-          "No",
-          "What kind of question is this?"
-       ]
-    },
-    "question_14": {
-       "question": "On an airplane, when sitting in the middle seat, who gets to use the armrests?",
-       "answers": [
-          "The middle person, of course!",
-          "The side person… cause I do it"
-       ]
-    },
-    "question_15": {
-       "question": "If time travel is possible, would we have met time travelers already?",
-       "answers": [
-          "Yes, sci-fi in real life",
-          "No, that’s impossible"
-       ]
-    },
-    "question_16": {
-       "question": "Cats or dogs?",
-       "answers": [
-          "Cats",
-          "Dogs",
-          "Fish!"
-       ]
-    },
-    "question_17": {
-       "question": "Are you an introvert or an extrovert?",
-       "answers": [
-          "Introvert",
-          "Extroverted introvert",
-          "Introverted extrovert",
-          "Extrovert"
-       ]
-    },
-    "question_18": {
-       "question": "Have you cried during a Disney movie?",
-       "answers": [
-          "Yes, they’re always so sad!",
-          "No, who does?!?"
-       ]
-    },
-    "question_19": {
-       "question": "Do you sing in the shower?",
-       "answers": [
-          "Yes, of course! My happy time",
-          "No, what a crazy person…"
-       ]
-    },
-    "question_20": {
-       "question": "What’s the longest amount of time between you dropping something on the floor and picking it up to eat?",
-       "answers": [
-          "Never!",
-          "< 5 minutes",
-          "5 - 10 minutes",
-          "Who cares??"
-       ]
-    },
-    "question_21": {
-       "question": "What is your horoscope?",
-       "answers": [
-          "Don’t know? Have you been living under a rock?!?",
-          "Aries",
-          "Taurus",
-          "Gemini",
-          "Cancer",
-          "Leo",
-          "Virgo",
-          "Libra",
-          "Scorpio",
-          "Sagittarius",
-          "Capricorn",
-          "Aquarius",
-          "Pisces"
-       ]
-    },
-    "question_22": {
-       "question": "MBTI?",
-       "answers": [
-          "ISTJ",
-          "ISFJ",
-          "INFJ",
-          "INTJ",
-          "ISTP",
-          "ISFP",
-          "INFP",
-          "INTP",
-          "ESTJ",
-          "ESFJ",
-          "ENFJ",
-          "ENTJ",
-          "ESTP",
-          "ESFP",
-          "ENFP",
-          "ENTP"
-       ]
-    }
- }
+  "1": {
+    "question": "Vanilla or chocolate?",
+    "answers": ["Vanilla", "Chocolate"]
+  },
+  "2": {
+    "question": "Pineapple on pizza?",
+    "answers": ["Of course! What else?", "Yuck, never in a million years"]
+  },
+  "3": {
+    "question": "Eat or drink soup?",
+    "answers": [
+      "You EAT the chunks in the soup!",
+      "You drink it! Or else it wouldn’t be soup."
+    ]
+  },
+  "4": {
+    "question": "Is a hot dog a sandwich?",
+    "answers": [
+      "Yes, it has bread encasing innards",
+      "No, it literally has one piece of bread"
+    ]
+  },
+  "5": {
+    "question": "What music do you listen to?",
+    "answers": [
+      "Pop",
+      "Country",
+      "Rock-and-roll",
+      "Classical",
+      "What is music?"
+    ]
+  },
+  "6": {
+    "question": "What Hogwarts house are you?",
+    "answers": [
+      "Gryffindor",
+      "Syltherin",
+      "Ravenclaw",
+      "Hufflepuff",
+      "What is Hogwarts?"
+    ]
+  },
+  "7": {
+    "question": "Is it black and blue or white and gold?",
+    "answers": [
+      "Black and blue",
+      "White and gold",
+      "I don’t get the reference…"
+    ]
+  },
+  "8": {
+    "question": "Did the top stop spinning at the end of Inception?",
+    "answers": [
+      "Yes! It was all real",
+      "No… it’s still fake",
+      "What top? What’s Inception?"
+    ]
+  },
+  "9": {
+    "question": "In Titanic, could Jack have fit on the door with Rose?",
+    "answers": [
+      "Yes, Rose literally killed Jack!",
+      "No, Jack had to sacrifice himself",
+      "Who’s Jack and Rose? The Titanic?"
+    ]
+  },
+  "10": {
+    "question": "Did James Charles deserve to be canceled?",
+    "answers": ["Yes, definitely", "No, it’s unfair", "James Charles, who?"]
+  },
+  "11": {
+    "question": "Which came first: the chicken or the egg?",
+    "answers": [
+      "The chicken had to lay the egg.",
+      "The chicken hatched from the egg.",
+      "I really want a fried egg."
+    ]
+  },
+  "12": {
+    "question": "Pluto deserves to be a planet.",
+    "answers": [
+      "Yes, more power to Pluto!",
+      "No, clearly not.",
+      "Wait, which one is that again?"
+    ]
+  },
+  "13": {
+    "question": "Do vegetables feel pain?",
+    "answers": ["Yes", "No", "What kind of question is this?"]
+  },
+  "14": {
+    "question": "On an airplane, when sitting in the middle seat, who gets to use the armrests?",
+    "answers": [
+      "The middle person, of course!",
+      "The side person… cause I do it"
+    ]
+  },
+  "15": {
+    "question": "If time travel is possible, would we have met time travelers already?",
+    "answers": ["Yes, sci-fi in real life", "No, that’s impossible"]
+  },
+  "16": {
+    "question": "Cats or dogs?",
+    "answers": ["Cats", "Dogs", "Fish!"]
+  },
+  "17": {
+    "question": "Are you an introvert or an extrovert?",
+    "answers": [
+      "Introvert",
+      "Extroverted introvert",
+      "Introverted extrovert",
+      "Extrovert"
+    ]
+  },
+  "18": {
+    "question": "Have you cried during a Disney movie?",
+    "answers": ["Yes, they’re always so sad!", "No, who does?!?"]
+  },
+  "19": {
+    "question": "Do you sing in the shower?",
+    "answers": ["Yes, of course! My happy time", "No, what a crazy person…"]
+  },
+  "20": {
+    "question": "What’s the longest amount of time between you dropping something on the floor and picking it up to eat?",
+    "answers": ["Never!", "< 5 minutes", "5 - 10 minutes", "Who cares??"]
+  },
+  "21": {
+    "question": "What is your horoscope?",
+    "answers": [
+      "Don’t know? Have you been living under a rock?!?",
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
+    ]
+  },
+  "22": {
+    "question": "MBTI?",
+    "answers": [
+      "ISTJ",
+      "ISFJ",
+      "INFJ",
+      "INTJ",
+      "ISTP",
+      "ISFP",
+      "INFP",
+      "INTP",
+      "ESTJ",
+      "ESFJ",
+      "ENFJ",
+      "ENTJ",
+      "ESTP",
+      "ESFP",
+      "ENFP",
+      "ENTP"
+    ]
+  }
+}
