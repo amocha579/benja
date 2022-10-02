@@ -104,8 +104,8 @@ class App extends Component {
           <Homepage
             path="/"
             userId={this.state.userId}
-            locationNumber={this.state.locationNumber}
-            updateLocationNumber={this.updateLocationNumber}
+            // locationNumber={this.state.locationNumber}
+            // updateLocationNumber={this.updateLocationNumber}
           />
           <Quiz path="/quiz" />
           <Profile path="/profile" />
