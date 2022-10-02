@@ -7,6 +7,7 @@ import Quiz from './pages/Quiz.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
+import {gapi} from "gapi-script"
 
 //import "../utilities.css";
 
@@ -54,21 +55,33 @@ class App extends Component {
   }
 
   handleLogin = res => {
-    console.log(`Logged in as ${res.profileObj.name}`)
-    const userToken = res.tokenObj.id_token
-    post('/api/login', { token: userToken }).then(user => {
+    console.log(`Logged in as ${res.profileObj.email}`)
+    //const userToken = res.tokenObj.id_token
       this.setState({
-        userId: user._id,
+        userEmail: res.profileObj.email,
+        userName: res.profileObj.name
       })
-      post('/api/initsocket', { socketid: socket.id })
+  }
+
+  handleButtonLogin = () => {
+    const GoogleAuth = gapi.auth2.getAuthInstance();
+    GoogleAuth.signIn().then(e => {
+      const profile = e.getBasicProfile();
+      this.setState({
+        userEmail: profile.getEmail(),
+        userName: profile.getName()
     })
+      console.log(e.getBasicProfile().getEmail())
+      
+    });
   }
 
   handleLogout = () => {
-    this.setState({ userId: undefined })
-    post('/api/logout').then(() => {
-      navigate('/')
+    this.setState({
+        userEmail: null,
+        userName: null
     })
+      navigate('/')
   }
 
   /*updateList = (newList) => {
@@ -84,7 +97,7 @@ class App extends Component {
           <NavBar
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
-            userId={this.state.userId}
+            userName={this.state.userName}
           />
           <Router>
             <Homepage path="/" userId={this.state.userId} />
@@ -97,14 +110,15 @@ class App extends Component {
         <NavBar
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
-          userId={this.state.userId}
-        />
+          userName={this.state.userName}
+          />
         <Router>
           <Homepage
             path="/"
             userId={this.state.userId}
             locationNumber={this.state.locationNumber}
             updateLocationNumber={this.updateLocationNumber}
+            handleButtonLogin={this.handleButtonLogin}
           />
           <Quiz path="/quiz" />
         </Router>

@@ -24,11 +24,10 @@ class Homepage extends Component {
   }
 
   go = () => {
-    this.props.getMatched()
   }
 
   render() {
-    if (this.props.userId) {
+    if (this.props.userName) {
       return (
         <div className="homepage">
           <div className="Homepage-image-container">
@@ -71,7 +70,7 @@ class Homepage extends Component {
             <br />
             <br />
           </p>
-          <div className="Homepage-GO-container" onClick={() => this.go()}>
+          <div className="Homepage-GO-container" onClick={() => this.props.handleButtonLogin()}>
             <div className="Homepage-GO-button">
               <span className="Homepage-GO-title">Get Matched</span>
             </div>
