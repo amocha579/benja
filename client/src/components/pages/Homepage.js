@@ -34,7 +34,7 @@ class Homepage extends Component {
           <div className="Homepage-image-container">
             <img src={'https://ibb.co/ZY3xVhs'} />
           </div>
-          <h1 className="Homepage-title">Do Opposites Attract?</h1>
+          <h1 className="Homepage-main-title">Do Opposites Attract?</h1>
           <div>
             <p className="Homepage-text-container">
               The world is becoming increasingly divided, but hey! they say
@@ -49,9 +49,9 @@ class Homepage extends Component {
               <br />
             </p>
           </div>
-          <div className="Homepage-GO-container" onClick={() => this.go()}>
-            <div className="Homepage-GO-button">
-              <span className="Homepage-GO-title">Get Matched</span>
+          <div className="Homepage-button-container" onClick={() => this.go()}>
+            <div className="Homepage-button">
+              <span className="Homepage-button-title">Get Matched</span>
             </div>
           </div>
         </div>
@@ -62,15 +62,15 @@ class Homepage extends Component {
           <div className="Homepage-image-container">
             <img src={logo} alt="ice cream" />
           </div>
-          <h1 className="Homepage-title">Do Opposites Attract?</h1>
+          <h1 className="Homepage-main-title">Do Opposites Attract?</h1>
           <p className="Homepage-text-container">
             Find your "least compatible" BFF!
             <br />
             <br />
           </p>
-          <div className="Homepage-GO-container" onClick={() => this.go()}>
-            <div className="Homepage-GO-button">
-              <span className="Homepage-GO-title">Get Matched</span>
+          <div className="Homepage-button-container" onClick={() => this.go()}>
+            <div className="Homepage-button">
+              <span className="Homepage-button-title">Get Matched</span>
             </div>
           </div>
         </div>
