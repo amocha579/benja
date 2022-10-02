@@ -3,13 +3,14 @@ import NavBar from "./modules/NavBar.js";
 import { Router } from "@reach/router";
 //import NotFound from "./pages/NotFound.js";
 import Homepage from "./pages/Homepage.js";
+import Quiz from "./pages/Quiz.js";
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from "@reach/router";
 
 //import "../utilities.css";
 
-import { socket } from "../client-socket.js";
+//import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
 //import TagYourself from "./pages/TagYourself.js";
@@ -27,6 +28,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    /*
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
@@ -35,6 +37,7 @@ class App extends Component {
         });
       }
     });
+    */
   }
 
   getMatched = () => {
@@ -53,6 +56,7 @@ class App extends Component {
   handleLogin = (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
+    /*
     post("/api/login", { token: userToken }).then((user) => {
       this.setState(
         { 
@@ -60,6 +64,7 @@ class App extends Component {
       });
       post("/api/initsocket", { socketid: socket.id });
     });
+    */
 
   };
 
@@ -105,6 +110,9 @@ class App extends Component {
             userId={this.state.userId}
             locationNumber={this.state.locationNumber}
             updateLocationNumber={this.updateLocationNumber}
+          />
+          <Quiz
+            path="/quiz"
           />
         </Router>
       </>

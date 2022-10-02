@@ -37,6 +37,9 @@ class NavBar extends Component {
         <div className = "NavBar-title">
           <a className = "NavBar-title-link" href="/"> touch-and-GO!</a>
         </div>
+        <div className = "NavBar-title">
+          <a className = "NavBar-title-link" href="/quiz"> Take Quiz</a>
+        </div>
         
         <div className="NavBar-links">
           
