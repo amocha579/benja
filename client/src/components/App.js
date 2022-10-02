@@ -4,6 +4,7 @@ import { Router } from '@reach/router'
 //import NotFound from "./pages/NotFound.js";
 import Homepage from './pages/Homepage.js'
 import Quiz from './pages/Quiz.js'
+import Profile from './pages/Profile.js'
 //import Location from "./pages/Location.js";
 //import About from "./pages/About.js";
 import { navigate } from '@reach/router'
@@ -121,6 +122,7 @@ class App extends Component {
             handleButtonLogin={this.handleButtonLogin}
           />
           <Quiz path="/quiz" />
+          <Profile path="/profile" />
         </Router>
       </>
     )
