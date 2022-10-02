@@ -9,7 +9,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const csrf = require('csurf');
+//const csrf = require('csurf');
 const helmet = require('helmet');
 
 const mongoStore = require('connect-mongo')(session);
@@ -110,11 +110,11 @@ module.exports = function(app, passport) {
 
   // adds CSRF support
   if (process.env.NODE_ENV !== 'test') {
-    app.use(csrf());
+    //app.use(csrf());
 
     // This could be moved to view-helpers :-)
     app.use(function(req, res, next) {
-      res.locals.csrf_token = req.csrfToken();
+      //res.locals.csrf_token = req.csrfToken();
       next();
     });
   }

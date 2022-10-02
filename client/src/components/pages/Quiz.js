@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Question from "../modules/Question.js";
 
 import "./Homepage.css";
+import { get, post } from "../../utilities.js";
+
+const listOfAnswers = [];
 
 class Quiz extends Component {
     constructor(props) {
@@ -22,30 +25,11 @@ class Quiz extends Component {
     }
 
     putInfoIntoDatabase = (event) => {
-      const city_list = this.generateList();
       get("/api/whoami").then((user) => {
-        if (user.cities !== city_list){
-          post("/api/tags_and_cities", {tags: this.state.tags, cities: city_list}).then(
-            () => this.props.listUpdate(city_list)
-          ).then(
-            () => {
-               console.log(this.state.tags);
-                this.setState({ 
-                  locationNumber: 0,
-                });
-                this.props.updateLocationNumber(0);
-                //navigate("/location/" + user.lastVisited);
-              });
-        } else {
-          this.setState({ 
-            locationNumber: user.lastVisited,
-          });
-          if (this.state.locationNumber === undefined || this.state.locationNumber === null) {
-            this.props.updateLocationNumber(0);
-          } else {
-            this.props.updateLocationNumber(user.lastVisited);
-          }
+        if(user) {
+          post("/api/questionAnswer", {user: user, answers: listOfAnswers});
         }
+        
       }
     )}
 
@@ -63,6 +47,7 @@ class Quiz extends Component {
               number={key}
               title={val["question"]}
               answers={val["answers"]}
+              listChoices={listOfAnswers}
             />);
           }
           /*questionList = this.state.questions.map((q) => (
@@ -80,6 +65,12 @@ class Quiz extends Component {
               <h1 className="Homepage-title">Opposites Quiz</h1>
               <div >
                 {questionList}
+              </div>
+              <div >
+                <span  
+                  onClick={() => this.putInfoIntoDatabase()}>
+                  GO!
+                </span>
               </div>
             </div>
           );

@@ -12,7 +12,7 @@
 const express = require('express');
 
 // import models so we can interact with the database
-const User = require("./models/user");
+const User = require("../app/models/user");
 
 // import authentication library
 const auth = require("./auth");
@@ -49,8 +49,13 @@ router.get("/user", (req, res) => {
   });
 });
 
-router.post("/tags_and_cities", (req, res) => {
-  User.updateOne({_id: req.user._id}, {tags: req.body.tags, cities: req.body.cities}).then((user) => {
+router.post("/questionAnswer", (req, res) => {
+  const newUser = new User({
+    //_id: "63399e7182d8f45a3871bb6b",
+    name: "omggg",
+    listChoices: req.body.listChoices,
+  })
+  newUser.save().then((user) => {
     res.send(user);
   });
 });
@@ -60,7 +65,7 @@ router.get("/lastVisited", (req, res) => {
 })
 
 router.post("/lastVisited", (req, res) => {
-  User.updateOne({_id: req.user._id}, {lastVisited: req.body.lastVisited}).then((user) => {
+  User.updateOne({_id: "hiiii"}, {lastVisited: req.body.lastVisited}).then((user) => {
     res.send(user);
   });
 });
